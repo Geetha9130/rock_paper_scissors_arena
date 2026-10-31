@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10152b">
+  <title>Rock • Paper • Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand"><span class="brand-icon">✦</span> PLAYZONE</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound">🔊 Sound On</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">THE CLASSIC SHOWDOWN</p>
+      <h1>Rock <span>Paper</span> Scissors</h1>
+      <p class="subtitle">Choose your move. Beat the computer. Rule the arena.</p>
+    </section>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="score-card player-card">
+        <span class="score-label">YOU</span>
+        <strong id="playerScore">0</strong>
+        <span class="score-caption">PLAYER</span>
+      </div>
+      <div class="vs">VS</div>
+      <div class="score-card cpu-card">
+        <span class="score-label">CPU</span>
+        <strong id="cpuScore">0</strong>
+        <span class="score-caption">COMPUTER</span>
+      </div>
+    </section>
+
+    <section class="arena">
+      <div class="fighter">
+        <div class="fighter-label">YOUR MOVE</div>
+        <div class="choice-display" id="playerChoice">?</div>
+        <div class="fighter-name">PLAYER</div>
+      </div>
+      <div class="arena-center">
+        <span class="versus-mark">⚡</span>
+        <p id="statusText" aria-live="polite">Make your move!</p>
+      </div>
+      <div class="fighter">
+        <div class="fighter-label">CPU MOVE</div>
+        <div class="choice-display" id="cpuChoice">?</div>
+        <div class="fighter-name">COMPUTER</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <h2>CHOOSE YOUR WEAPON</h2>
+      <div class="move-buttons">
+        <button class="move-btn" data-move="rock">
+          <span class="move-icon">✊</span><span>ROCK</span>
+        </button>
+        <button class="move-btn" data-move="paper">
+          <span class="move-icon">✋</span><span>PAPER</span>
+        </button>
+        <button class="move-btn" data-move="scissors">
+          <span class="move-icon">✌️</span><span>SCISSORS</span>
+        </button>
+      </div>
+      <p class="hint">Rock beats Scissors · Paper beats Rock · Scissors beats Paper</p>
+    </section>
+
+    <footer>
+      <button class="reset-btn" id="resetBtn">↻ Reset Score</button>
+      <span>Best of your own streaks ✦ Have fun!</span>
+    </footer>
+  </main>
+
+  <div class="modal-backdrop" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <div class="result-modal">
+      <div class="modal-spark">✦</div>
+      <p class="eyebrow">ROUND RESULT</p>
+      <h2 id="resultTitle">YOU WIN!</h2>
+      <p id="resultDescription">Great move.</p>
+      <button id="continueBtn">PLAY AGAIN <span>→</span></button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
